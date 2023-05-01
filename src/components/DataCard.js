@@ -2,8 +2,8 @@ import React from "react";
 import "../styles/styles.css";
 import {formatNumber} from "../util/Utils";
 
-const DataCard = ({ item }) => {
-    const { symbol, name, priceUsd, changePercent24Hr, picture } = item;
+const DataCard = ({ coin }) => {
+    const { symbol, name, priceUsd, changePercent24Hr, picture } = coin;
     const PRICE_UP = changePercent24Hr > 0;
 
     return (

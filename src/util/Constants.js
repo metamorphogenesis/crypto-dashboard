@@ -26,7 +26,7 @@ export const ItemId = {
     [SHIB]: 11
 };
 
-export const ItemTitle = {
+export const CoinTitle = {
     [XRP]: 'Ripple',
     [TRX]: 'Tron'
 };

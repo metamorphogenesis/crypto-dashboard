@@ -1,11 +1,11 @@
-import {ItemTitle} from "./ItemConstants";
+import {CoinTitle} from "./Constants";
 import {CoinModel} from "../model/CoinModel";
 
 export function parseToCoin(data) {
     const ID = data.id;
     const SYMBOL = data.symbol;
-    const NAME = ID in ItemTitle
-        ? ItemTitle[ID]
+    const NAME = ID in CoinTitle
+        ? CoinTitle[ID]
         : data.name;
     const PRICE_USD = Number(data.priceUsd);
     const CHANGE_PERCENT_24_HR = Number(data.changePercent24Hr);

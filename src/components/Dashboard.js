@@ -1,12 +1,12 @@
 import DataCard from "./DataCard";
 
-const Dashboard = ({ items }) => {
+const Dashboard = ({ coins }) => {
     return (
         <div className="dashboard">
             {
-                items
+                coins
                     &&
-                items.map((item) => <DataCard key={item.id} item={item} />)
+                coins.map((item) => <DataCard key={item.id} coin={item} />)
             }
         </div>
     );
