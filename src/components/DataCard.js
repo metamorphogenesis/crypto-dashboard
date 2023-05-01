@@ -3,7 +3,7 @@ import "../styles/styles.css";
 import {formatNumber} from "../util/Utils";
 
 const DataCard = ({ item }) => {
-    const { id, symbol, name, priceUsd, changePercent24Hr, picture } = item;
+    const { symbol, name, priceUsd, changePercent24Hr, picture } = item;
     const PRICE_UP = changePercent24Hr > 0;
 
     return (
