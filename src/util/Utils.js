@@ -17,5 +17,6 @@ export function formatNumber(number, length) {
     const signLength = number < 0 ? 1 : 0;
     const intPartLength = Math.floor(Math.abs(number)).toString().length;
     const decPartLength = Math.max(0, length - intPartLength - signLength);
+
     return number.toFixed(decPartLength);
 }
