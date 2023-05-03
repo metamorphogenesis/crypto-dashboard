@@ -11,7 +11,7 @@ const USDT = 'tether';
 const TRX = 'tron';
 const XRP = 'xrp';
 
-export const ItemId = {
+export const CoinId = {
     [BTC]: 0,
     [ETH]: 1,
     [USDT]: 2,
@@ -26,7 +26,7 @@ export const ItemId = {
     [SHIB]: 11
 };
 
-export const CoinTitle = {
+export const CoinCustomName = {
     [XRP]: 'Ripple',
     [TRX]: 'Tron'
 };

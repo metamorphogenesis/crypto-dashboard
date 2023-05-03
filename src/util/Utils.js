@@ -1,21 +1,21 @@
-import {CoinTitle} from "./Constants";
+import {CoinCustomName} from "./Constants";
 import {CoinModel} from "../model/CoinModel";
 
-export function parseToCoin(data) {
-    const ID = data.id;
-    const SYMBOL = data.symbol;
-    const NAME = ID in CoinTitle
-        ? CoinTitle[ID]
+export function mapToCoin(data) {
+    const id = data.id;
+    const symbol = data.symbol;
+    const name = id in CoinCustomName
+        ? CoinCustomName[id]
         : data.name;
-    const PRICE_USD = Number(data.priceUsd);
-    const CHANGE_PERCENT_24_HR = Number(data.changePercent24Hr);
+    const priceUsd = Number(data.priceUsd);
+    const changePercent24Hr = Number(data.changePercent24Hr);
 
-    return new CoinModel(ID, SYMBOL, NAME, PRICE_USD, CHANGE_PERCENT_24_HR,`/images/${ID}.svg`);
+    return new CoinModel(id, symbol, name, priceUsd, changePercent24Hr,`/images/${id}.svg`);
 }
 
 export function formatNumber(number, length) {
     const signLength = number < 0 ? 1 : 0;
-    const integerPartLength = Math.floor(Math.abs(number)).toString().length;
-    const decimalPartLength = Math.max(0, length - integerPartLength - signLength);
-    return number.toFixed(decimalPartLength);
+    const intPartLength = Math.floor(Math.abs(number)).toString().length;
+    const decPartLength = Math.max(0, length - intPartLength - signLength);
+    return number.toFixed(decPartLength);
 }

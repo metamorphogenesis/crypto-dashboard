@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Dashboard from './components/Dashboard';
 import './App.css';
-import {ItemId} from "./util/Constants";
-import {parseToCoin} from "./util/Utils";
+import {CoinId} from "./util/Constants";
+import {mapToCoin} from "./util/Utils";
+import "./styles/styles.css";
 
 function App() {
     const [data, setData] = useState(null);
@@ -17,8 +18,8 @@ function App() {
 
             const responseJson = await response.json();
             const items = responseJson.data
-                .filter(item => item.id in ItemId)
-                .map(item => parseToCoin(item));
+                .filter(item => item.id in CoinId)
+                .map(item => mapToCoin(item));
             setData(items);
         } catch (error) {
             console.error('Data fetching error: ', error);

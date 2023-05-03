@@ -1,10 +1,9 @@
 import React from "react";
-import "../styles/styles.css";
 import {formatNumber} from "../util/Utils";
 
 const DataCard = ({ coin }) => {
     const { symbol, name, priceUsd, changePercent24Hr, picture } = coin;
-    const PRICE_UP = changePercent24Hr > 0;
+    const is_price_up = changePercent24Hr > 0;
 
     return (
         <div className="data-card">
@@ -16,9 +15,9 @@ const DataCard = ({ coin }) => {
                 <div className="symbol">
                     {symbol}
 
-                    <div className={`change change-${PRICE_UP ? 'pos' : 'neg'}`}>
+                    <div className={`change change-${is_price_up ? 'pos' : 'neg'}`}>
                         {
-                            PRICE_UP
+                            is_price_up
                                 ? '▲'
                                 : '▼'
                         }
@@ -26,13 +25,13 @@ const DataCard = ({ coin }) => {
                 </div>
             </div>
 
-            <div className={`content-overlay content-overlay-${PRICE_UP ? 'pos' : 'neg'}`}>
+            <div className={`content-overlay content-overlay-${is_price_up ? 'pos' : 'neg'}`}>
                 <div className="content-overlay-name">
                     {name}
                 </div>
 
-                <div className={`content-overlay-percent content-overlay-percent-${PRICE_UP ? 'pos' : 'neg'}`}>
-                    {`${PRICE_UP ? '+' : ''}${formatNumber(changePercent24Hr, 4)}% *`}
+                <div className={`content-overlay-percent content-overlay-percent-${is_price_up ? 'pos' : 'neg'}`}>
+                    {`${is_price_up ? '+' : ''}${formatNumber(changePercent24Hr, 4)}% *`}
                 </div>
 
                 <div className="content-overlay-change-info">
